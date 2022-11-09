@@ -57,11 +57,10 @@ header  {
     width: 85vw;
     border-radius: 6px;
     position: relative;
-    height:  150px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding: 30px 15px;
+    padding: 30px 20px 20px 15px;
     margin: 50px 0;
     box-shadow:7px 14px 23px 5px rgba(0,0,0,0.1) ;
 
@@ -83,7 +82,7 @@ header  {
     &__company  {
         display: flex;
         align-items: baseline;
-        margin-top: 20px;
+        margin-top: 10px;
 
         &__name  {
             color: var(--header_background);
@@ -128,6 +127,8 @@ header  {
         color: var(--infos);
         font-size: 1.5rem;
         list-style-position: inside;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--infos);
         & > li {
             list-style-type: disc;
 
@@ -135,5 +136,28 @@ header  {
                 list-style-type: none;
             }
         }
+    }
+
+    &__filters  {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px 0 ;
+        row-gap: 10px;
+        column-gap: 15px;
+
+
+        &__tag  {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--header_background);
+            background-color: var(--Background);
+            border-radius: 6px;
+            height: 35px;
+            padding: 5px 8px;
+        }
+
     }
 }

@@ -48,7 +48,7 @@ class UI {
           ];
           let tags = newArr
             .map((tag) => {
-              return `<div class="tags" id="tag--job">${tag}</div>`;
+              return `<div class="offer__filters__tag" id="tag--job">${tag}</div>`;
             })
             .join("");
           return `<div class="offer" data-id="${data.id}" data-featured="${data.featured}">
