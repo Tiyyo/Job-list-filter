@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -14,8 +16,8 @@ html {
 --header_background: hsl(180, 29%, 50%);
 --Background: hsl(180, 52%, 96%);
 --Filter_Tablets: hsl(180, 31%, 95%);
---Dark_Grayish_Cyan: hsl(180, 8%, 52%);
---Very_Dark_Grayish_Cyan: hsl(180, 14%, 20%);
+--infos: hsl(180, 8%, 52%);
+--featured_background: hsl(180, 14%, 20%);
 }
 
 .attribution {
@@ -29,6 +31,7 @@ html {
 body  {
     min-height: 100vh;
     background-color: var(--Background);
+    font-family: 'League Spartan', sans-serif
 }
 
 header  {
@@ -47,6 +50,8 @@ header  {
     margin: 0 auto;
 }
 
+
+
 .offer  {
     background-color: white;
     width: 85vw;
@@ -58,6 +63,11 @@ header  {
     justify-content: space-evenly;
     padding: 30px 15px;
     margin: 50px 0;
+    box-shadow:7px 14px 23px 5px rgba(0,0,0,0.1) ;
+
+    &[data-featured=true] {
+        border-left: 5px solid var(--header_background);
+    }
     &__logo  {
         position: absolute;
         border-radius: 50%;
@@ -73,24 +83,32 @@ header  {
     &__company  {
         display: flex;
         align-items: baseline;
+        margin-top: 20px;
+
+        &__name  {
+            color: var(--header_background);
+            font-weight: 700;
+            font-size: 1.7rem;
+        }
+
         &__new[data-new=true] {
             color: white;
-            font-size: 1.2rem;
-            font-weight: bold;
-            background-color: cyan;
-            padding:4px 7px;
+            background-color:  var(--header_background);
+            font-size: 1.3rem;
+            font-weight: 700;
+            padding:6px 8px;
             border-radius: 15px;
-            margin-left: 40px;
+            margin-left: 20px;
         }
         &__new[data-new=false] {
             display: none;
         }
         &__featured[data-featured=true]{
             color: white;
-            font-size: 1.2rem;
-            font-weight: bold;
-            background-color: cyan;
-            padding:4px 7px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            background-color: var(--featured_background);
+            padding:6px 8px;
             border-radius: 15px;
             margin-left: 10px;
         }
@@ -98,5 +116,24 @@ header  {
             display: none;
         }
     
+    }
+    &__position {
+        margin: 10px 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    &__infos  {
+        display: flex;
+        column-gap: 7px;
+        color: var(--infos);
+        font-size: 1.5rem;
+        list-style-position: inside;
+        & > li {
+            list-style-type: disc;
+
+            &:first-child {
+                list-style-type: none;
+            }
+        }
     }
 }
