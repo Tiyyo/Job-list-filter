@@ -16,7 +16,6 @@ async function getJobs() {
 
 class UI {
   static displayJobs(datas) {
-    console.log(datas);
     if (datas === undefined || datas === null || datas.length === 0) {
       offersContainer.innerHTML = "<h3>No more job offers</h3>";
       console.log(datas);
@@ -87,6 +86,27 @@ class UI {
 
 window.addEventListener("load", () => {
   getJobs();
+});
+
+window.addEventListener("click", (e) => {
+  console.log(e.target.id);
+  if (e.target.id === "tag--job") {
+    console.log(e.target.textContent);
+    activeTags.push(e.target.textContent);
+  }
+  console.log(activeTags);
+  filtersContainer.innerHTML = activeTags
+    .map((tag) => {
+      return `
+      <div class="active--tag data-tag="${tag}">
+        <div class="active--tag__name">${tag}</div>
+        <button class="active--tag__btn data-closed-btn="">
+          <img src="./images/icon-remove.svg" alt="remove filter"/>
+        </button>
+      </div>
+    `;
+    })
+    .join("");
 });
 
 // window.addEventListener("load", () => {
