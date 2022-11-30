@@ -70,6 +70,7 @@ header  {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--infos);
+            cursor: pointer;
         }
 
 
@@ -92,6 +93,9 @@ header  {
 
     &[data-featured=true] {
         border-left: 5px solid var(--header_background);
+    }
+    &[data-active=false] {
+        display : none; 
     }
     &__logo  {
         position: absolute;
@@ -183,12 +187,25 @@ header  {
             border-radius: 6px;
             height: 35px;
             padding: 5px 8px;
+
+            
+
+            &[data-state="active"]{
+                background-color: var(--header_background);
+                color: white;
+            }
+
+            &:hover {
+                background-color: var(--header_background);
+                color: white;
+                cursor: pointer;
+            }
         }
 
     }
 }
 
-.active--tag {
+.active--tag {          
     height: 35px;
     display: flex;
     border-radius: 6px;
@@ -213,7 +230,9 @@ header  {
         & > img {
             object-fit: contain;
             object-position: center;
+            cursor: pointer;
      
         }
     }
 }
+

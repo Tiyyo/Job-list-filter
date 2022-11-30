@@ -72,6 +72,7 @@ header {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--infos);
+  cursor: pointer;
 }
 
 .offer {
@@ -88,6 +89,9 @@ header {
 }
 .offer[data-featured=true] {
   border-left: 5px solid var(--header_background);
+}
+.offer[data-active=false] {
+  display: none;
 }
 .offer__logo {
   position: absolute;
@@ -177,6 +181,15 @@ header {
   height: 35px;
   padding: 5px 8px;
 }
+.offer__filters__tag[data-state=active] {
+  background-color: var(--header_background);
+  color: white;
+}
+.offer__filters__tag:hover {
+  background-color: var(--header_background);
+  color: white;
+  cursor: pointer;
+}
 
 .active--tag {
   height: 35px;
@@ -205,4 +218,5 @@ header {
      object-fit: contain;
   -o-object-position: center;
      object-position: center;
+  cursor: pointer;
 }/*# sourceMappingURL=app.css.map */
