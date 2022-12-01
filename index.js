@@ -111,8 +111,8 @@ class UI {
       activeTags = [];
     }
   }
-  static stateTags() {
-    filterTags.forEach((filterTag) => {
+  static stateTags(nodeList) {
+    nodeList.forEach((filterTag) => {
       activeTags.forEach((activeTag) => {
         if (activeTag === filterTag.dataset.job) {
           filterTag.setAttribute("data-state", "active");
@@ -135,5 +135,5 @@ window.addEventListener("click", (e) => {
   const offers = document.querySelectorAll(".offer");
   UI.displayJobAfterFiltering(offers);
   const filterTags = document.querySelectorAll(".offer__filters__tag");
-  UI.stateTags();
+  UI.stateTags(filterTags);
 });
