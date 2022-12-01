@@ -111,6 +111,17 @@ class UI {
       activeTags = [];
     }
   }
+  static stateTags() {
+    filterTags.forEach((filterTag) => {
+      activeTags.forEach((activeTag) => {
+        if (activeTag === filterTag.dataset.job) {
+          filterTag.setAttribute("data-state", "active");
+        } else {
+          filterTag.setAttribute("data-state", "isnotactive");
+        }
+      });
+    });
+  }
 }
 
 window.addEventListener("load", () => {
@@ -123,16 +134,6 @@ window.addEventListener("click", (e) => {
   UI.displayJobs(jobs);
   const offers = document.querySelectorAll(".offer");
   UI.displayJobAfterFiltering(offers);
-
   const filterTags = document.querySelectorAll(".offer__filters__tag");
-
-  filterTags.forEach((filterTag) => {
-    activeTags.forEach((activeTag) => {
-      if (activeTag === filterTag.dataset.job) {
-        filterTag.setAttribute("data-state", "active");
-      } else {
-        filterTag.setAttribute("data-state", "isnotactive");
-      }
-    });
-  });
+  UI.stateTags();
 });
