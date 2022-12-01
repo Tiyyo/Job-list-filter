@@ -125,13 +125,9 @@ window.addEventListener("click", (e) => {
   UI.displayJobAfterFiltering(offers);
 
   const filterTags = document.querySelectorAll(".offer__filters__tag");
-  console.log(filterTags[0].dataset.job);
-  console.log(activeTags);
 
   filterTags.forEach((filterTag) => {
     activeTags.forEach((activeTag) => {
-      console.log(activeTag);
-      console.log(filterTag.dataset.job);
       if (activeTag === filterTag.dataset.job) {
         filterTag.setAttribute("data-state", "active");
       } else {
