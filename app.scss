@@ -90,6 +90,11 @@ header  {
     padding: 30px 20px 20px 15px;
     margin: 50px 0;
     box-shadow:7px 14px 23px 5px rgba(0,0,0,0.1) ;
+    transform: translate(0);
+    transition: transform 0.25s;
+    &:hover  {
+        transform: translate(-5px, -15px)
+    }
 
     &[data-featured=true] {
         border-left: 5px solid var(--header_background);
@@ -97,6 +102,14 @@ header  {
     &[data-active=false] {
         display : none; 
     }
+    @media screen and (min-width : 768px) {
+        display: grid;
+        grid-template-columns: 50px 35% 50%;
+
+
+    }
+
+
     &__logo  {
         position: absolute;
         border-radius: 50%;
@@ -104,6 +117,10 @@ header  {
         width: 50px;
         top: -25px;
         left: 15px;
+        @media screnn and (min-width : 768px) {
+            position: relative;
+        }
+
         & > img {
             object-fit: cover;
             width: 100%;
@@ -159,6 +176,11 @@ header  {
         list-style-position: inside;
         padding-bottom: 15px;
         border-bottom: 1px solid var(--infos);
+
+        @media screen and (min-width: 768px) {
+            border-bottom: none;
+        }
+       
         & > li {
             list-style-type: disc;
 
